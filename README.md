@@ -1,0 +1,2 @@
+# Gareth de Walters
+This site uses [Eleventy](https://www.11ty.io) for static site generation. Changes are tracked with Git and pushed [here](https://github.com//gdewalters/dewalters.net) using command line. The site is deployed automatically by Netlify using [continuous deployment](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git).

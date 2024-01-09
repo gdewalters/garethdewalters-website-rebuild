@@ -1,0 +1,12 @@
+# Ignore artifacts:
+_includes
+_data
+_site
+eleventy.config.js
+eleventy.config.images.js
+eleventy.config.drafts.js
+netlify.toml
+
+# Ignore all Markdown files:
+**/*.md
+**/*.json

@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="en-NZ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+
+    <meta name="description" content="{{ metadata.metaDescription155Chars }}" />
+    <link rel="stylesheet" type="text/css" href="/css/gdewalters-style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="180x180"
+      href="apple-touch-icon.png"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <link rel="manifest" href="site.webmanifest" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    <nav class="nav" id="nav">
+      <a href="#home">Logo</a>
+      <a href="#menu-item-1">Menu Item 1</a>
+      <a href="#menu-item-2">Menu Item 2</a>
+      <a href="#menu-item-3">Menu Item 3</a>
+      <a href="javascript:void(0);" id="menu-toggle" onclick="togglemenu()">
+        <div class="menu-toggle__bar1"></div>
+        <div class="menu-toggle__bar2"></div>
+        <div class="menu-toggle__bar3"></div>
+      </a>
+    </nav>
+    <main>
+      <section>
+        {{ content | safe}}
+      </section>
+    </main>
+    <footer>
+      <small
+        >©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Your company name. All Rights Reserved.</small
+      >
+    </footer>
+    <script>
+      function togglemenu() {
+        var x = document.getElementById("nav");
+        if (x.className === "nav") {
+          x.className += " nav--open";
+        } else {
+          x.className = "nav";
+        }
+        var element = document.getElementById("menu-toggle");
+        element.classList.toggle("menu-toggle--open");
+      }
+    </script>
+    <script src="/js/gdewalters-main.js"></script>
+  </body>
+</html>
