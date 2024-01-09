@@ -10,6 +10,19 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
+// -----------------------------------------------------------------
+// Enable Tailwind
+// -----------------------------------------------------------------
+
+const tailwind = require('tailwindcss');
+const postCss = require('postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+
+// -----------------------------------------------------------------
+// End Tailwind
+// -----------------------------------------------------------------
+
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
@@ -37,6 +50,31 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginBundle);
 
 	// Filters
+
+
+	// -----------------------------------------------------------------
+	// Tailwind asynchronous filter
+	// -----------------------------------------------------------------
+
+	const postcssFilter = (cssCode, done) => {
+		// we call PostCSS here.
+		postCss([tailwind(require('./tailwind.config')), autoprefixer(), cssnano({ preset: 'default' })])
+			.process(cssCode, {
+				// path to our CSS file
+				from: './_includes/css/tailwind.css'
+			})
+			.then(
+				(r) => done(null, r.css),
+				(e) => done(e, null)
+			);
+	};
+
+	eleventyConfig.addWatchTarget('./_includes/css/tailwind.css');
+	eleventyConfig.addNunjucksAsyncFilter('postcss', postcssFilter);
+
+	// -----------------------------------------------------------------
+	// End Tailwind
+	// -----------------------------------------------------------------
 
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", mdLib => {

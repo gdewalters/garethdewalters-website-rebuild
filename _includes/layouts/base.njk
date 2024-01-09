@@ -9,7 +9,19 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
 
     <meta name="description" content="{{ metadata.metaDescription155Chars }}" />
-    <link rel="stylesheet" type="text/css" href="/css/gdewalters-style.css" />
+
+    <!-- Render styles inline for better performance -->
+    <style>
+    {% set css %}
+    {% include "css/tailwind.css" %}
+    {% endset %}
+    {{css | postcss | safe}}
+    </style>  
+
+    <!-- ... Or link to stylesheet -->
+    <!-- Approach outlined here: https://zenzes.me/eleventy-integrate-postcss-and-tailwind-css/ -->
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/gdewalters-style.css" /> -->
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link

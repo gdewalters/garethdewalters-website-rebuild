@@ -1,0 +1,9 @@
+---
+permalink: /assets/css/dewalters-theme.css
+eleventyExcludeFromCollections: true
+---
+
+{% set css %}
+    {% include "css/tailwind.css" %}
+{% endset %}
+{{css | postcss | safe}}
