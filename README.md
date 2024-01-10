@@ -1,2 +1,13 @@
-# Gareth de Walters
-This site uses [Eleventy](https://www.11ty.io) for static site generation. Changes are tracked with Git and pushed [here](https://github.com//gdewalters/dewalters.net) using command line. The site is deployed automatically by Netlify using [continuous deployment](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git).
+# garethdewalters.com
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fcc46af1-f249-4989-ad82-3c79fc37a89b/deploy-status)](https://app.netlify.com/sites/garethdewalters-website/deploys)
+
+Source code for [garethdewalters.com](https://garethdewalters.com), my personal website, built with [Eleventy](https://www.11ty.io).
+
+## License
+
+This is my personal website. I'm keeping its source code open as a learning resource, but this is not a template. You're free to re-use __parts of this codebase__ in your own site, with attribution. Just __don't copy the entire thing__, replace the content and publish it. You know - be nice about it.
+
+## Credits
+
+- https://mxb.dev/: Eleventy config and set-up

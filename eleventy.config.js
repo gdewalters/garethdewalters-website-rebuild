@@ -7,8 +7,8 @@ const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-const pluginDrafts = require("./eleventy.config.drafts.js");
-const pluginImages = require("./eleventy.config.images.js");
+const pluginDrafts = require("./_11ty-utilities/eleventy.config.drafts.js");
+const pluginImages = require("./_11ty-utilities/eleventy.config.images.js");
 
 // -----------------------------------------------------------------
 // Enable Tailwind
@@ -98,14 +98,14 @@ module.exports = function(eleventyConfig) {
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
+	// Base configuration
 	return {
 		// Control which files Eleventy will process
 		// e.g.: *.md, *.njk, *.html, *.liquid
 		templateFormats: [
 			"md",
 			"njk",
-			"html",
-			"liquid",
+			"html"
 		],
 
 		// Pre-process *.md files with: (default: `liquid`)
@@ -117,9 +117,10 @@ module.exports = function(eleventyConfig) {
 		// These are all optional:
 		dir: {
 			input: "content",          // default: "."
+			output: "_site",
 			includes: "../_includes",  // default: "_includes"
-			data: "../_data",          // default: "_data"
-			output: "_site"
+			data: "../_data"          // default: "_data"
+
 		},
 
 		// -----------------------------------------------------------------

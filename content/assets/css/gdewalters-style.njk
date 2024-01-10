@@ -4,6 +4,6 @@ eleventyExcludeFromCollections: true
 ---
 
 {% set css %}
-    {% include "css/tailwind.css" %}
+    {% include "css-framework/tailwind.css" %}
 {% endset %}
 {{css | postcss | safe}}

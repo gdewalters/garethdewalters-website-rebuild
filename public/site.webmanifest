@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "lang": "en-NZ",
+    "dir": "ltr",
+    "name": "Gareth de Walters",
+    "short_name": "GdW",
     "icons": [
         {
             "src": "/assets/img/favicon/android-chrome-192x192.png?v=zX7lz2GQ2G",
@@ -13,7 +15,22 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#da532c",
-    "display": "standalone"
+    "display_override": [
+        "window-controls-overlay"
+    ],
+    "theme_color": "",
+    "background_color": "",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "natural",
+    "share_target": {
+        "action": "/share/",
+        "method": "GET",
+        "enctype": "application/x-www-form-urlencoded",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    }
 }

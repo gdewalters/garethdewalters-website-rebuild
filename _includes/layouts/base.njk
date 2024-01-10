@@ -13,7 +13,7 @@
     <!-- Render styles inline for better performance -->
     <style>
     {% set css %}
-    {% include "css/tailwind.css" %}
+    {% include "css-framework/tailwind.css" %}
     {% endset %}
     {{css | postcss | safe}}
     </style>  
@@ -96,6 +96,6 @@
         element.classList.toggle("menu-toggle--open");
       }
     </script>
-    <script src="/js/gdewalters-main.js"></script>
+    <script src="/assets/js/gdewalters-main.js"></script>
   </body>
 </html>

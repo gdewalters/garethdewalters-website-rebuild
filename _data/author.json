@@ -1,0 +1,27 @@
+{
+    "name": "Gareth de Walters",
+    "email": "gareth@dewalters.net",
+    "avatar": "",
+    "social": {
+        "twitter": {
+            "name": "gdewalters",
+            "url": "https://twitter.com/gdewalters"
+        },
+        "github": {
+            "name": "gdewalters",
+            "url": "https://github.com/gdewalters"
+        },
+        "bluesky": {
+            "name": "gdewalters",
+            "url": "ttps://bsky.app/profile/gdewalters.bsky.social"
+        },
+        "instagram": {
+            "name": "gdewalters",
+            "url": "https://instagram.com/gdewalters/"
+        },
+        "linkedin": {
+            "name": "gdewalters",
+            "url": "https://nz.linkedin.com/in/gdewalters/"
+        }
+    }
+}

@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["src/**/*.njk"],
+    content: ["**/*.njk"],
     safelist: [],
     darkMode: "class",
     theme: {
