@@ -3,6 +3,7 @@ _site/
 package-lock.json
 .DS_Store
 functions
+deprecated
 
 # Dependency directories
 node_modules/

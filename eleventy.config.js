@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
 
@@ -7,8 +9,22 @@ const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-const pluginDrafts = require("./_11ty-utilities/eleventy.config.drafts.js");
-const pluginImages = require("./_11ty-utilities/eleventy.config.images.js");
+// Contentful
+const contentful = require("contentful");
+const client = contentful.createClient({
+    // This is the space ID. A space is like a project folder in Contentful terms
+    space: process.env.CTFL_SPACE,
+    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+    accessToken: process.env.CTFL_ACCESSTOKEN
+});
+const {
+    documentToHtmlString
+} = require('@contentful/rich-text-html-renderer');
+
+// filters
+const pluginDrafts = require("./_utils/eleventy.config.drafts.js");
+const pluginImages = require("./_utils/eleventy.config.images.js");
+const filters = require("./_utils/eleventy.config.filters.js");
 
 // -----------------------------------------------------------------
 // Enable Tailwind
@@ -50,7 +66,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginBundle);
 
 	// Filters
+    Object.keys(filters).forEach((filterName) => {
+        eleventyConfig.addFilter(filterName, filters[filterName])
+    })
 
+	eleventyConfig.addFilter("renderRichTextAsHtml", (value) =>
+    	documentToHtmlString(value)
+  	);
 
 	// -----------------------------------------------------------------
 	// Tailwind asynchronous filter
@@ -61,7 +83,7 @@ module.exports = function(eleventyConfig) {
 		postCss([tailwind(require('./tailwind.config')), autoprefixer(), cssnano({ preset: 'default' })])
 			.process(cssCode, {
 				// path to our CSS file
-				from: './_includes/css/tailwind.css'
+				from: './_includes/css-framework/tailwind.css'
 			})
 			.then(
 				(r) => done(null, r.css),
@@ -69,7 +91,7 @@ module.exports = function(eleventyConfig) {
 			);
 	};
 
-	eleventyConfig.addWatchTarget('./_includes/css/tailwind.css');
+	eleventyConfig.addWatchTarget('./_includes/css-framework/tailwind.css');
 	eleventyConfig.addNunjucksAsyncFilter('postcss', postcssFilter);
 
 	// -----------------------------------------------------------------

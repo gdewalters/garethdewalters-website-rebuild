@@ -7,7 +7,13 @@ module.exports = {
         colors: {
           change: "transparent",
         },
+        fontFamily: {
+          lato: ["Lato", "sans-serif"],
+          merriweather: ["Merriweather", "sans"],
+        },
       },
     },
-    plugins: [],
+    plugins: [
+      require('@tailwindcss/typography'),
+    ],
   };

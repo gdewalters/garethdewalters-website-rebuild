@@ -5,5 +5,8 @@
     "locale": "en_NZ",
     "domain": "garethdewalters.com",
     "url": "https://garethdewalters.com",
+    "assetsUrl": "https://garethdewalters.com/assets",
+    "faviconUrl": "https://garethdewalters.com/assets/img/favicon",
     "repo": "https://github.com/gdewalters/garethdewalters-website"
+
 }

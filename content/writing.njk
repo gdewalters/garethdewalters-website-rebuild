@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Writing
+metaTitle60Chars: Section meta title
+description: Here’re a few words I’ve written. If you like them, you can subscribe to my RSS feed.
+eleventyNavigation:
+  key: Writing
+  order: 2
+---
+{% set postslist = collections.posts %}
+{# include "partials/writing-list.njk" #}
+
+<main>
+    <h1>A brave new world, indeed.</h1>
+
+{% for article in articles %}
+	<article>
+		<h1>{{ article.fields.headline }}</h1>
+		<time>{{ article.fields.datePublished }}</time>
+		<a href="/writing/{{ article.fields.headline | slug }}">Read the post</a>
+	</article>
+{% endfor %}
+
+
+</main>

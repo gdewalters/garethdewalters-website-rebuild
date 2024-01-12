@@ -1,0 +1,38 @@
+---
+layout: layouts/article.njk
+pagination:
+    data: articles
+    size: 1
+    alias: article
+permalink: "writing/{{ article.fields.slug }}/index.html"
+eleventyComputed: 
+    title: "{{ article.fields.headline }}"
+---
+    <header class="max-w-4xl mx-auto text-center">
+         <h1 class="font-lato">{{ article.fields.headline }}</h1>
+         <p class="">Published on: <time>{{ article.fields.datePublished }}</time></p>
+    </header>
+    
+    <section id="articleStandfirst" class="max-w-2xl mx-auto mb-10 md:prose-xl lg:prose-2xl font-merriweather">
+        {{ article.fields.standfirst | safe }}
+    </section>
+    
+    <section id="articleBody" class="max-w-2xl mx-auto font-merriweather prose-h2:font-lato prose-h3:font-lato">
+
+        {{ article.fields.body | renderRichTextAsHtml | safe }}
+
+        <hr />
+
+    </section>
+
+    <footer class="max-w-2xl mx-auto md:prose-xl lg:prose-2xl font-merriweather">
+
+        <section id="articleTags" class="flex flex-row">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 basis-1/6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
+            </svg>
+            <p class="md:prose-sm lg:prose-base basis-5/6">Tag, Tag, Tag</p>
+        </section>
+        
+    </footer>
