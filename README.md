@@ -11,3 +11,8 @@ This is my personal website. I'm keeping its source code open as a learning reso
 ## Credits
 
 - https://mxb.dev/: Eleventy config and set-up
+- https://zenzes.me/eleventy-integrate-postcss-and-tailwind-css/: Tailwind integration with 11ty
+- https://www.themes.dev/blog/typographic-defaults-in-tailwind-css/: Font set-up
+- https://blog.logrocket.com/how-to-use-custom-fonts-tailwind-css/: Custom fonts
+- https://henry.codes/writing/how-to-use-contentful-with-eleventy/: Contentful integration
+- https://www.contentful.com/blog/integrating-contentful-with-eleventy-create-static-sites/: Contentful integration

@@ -43,7 +43,9 @@ module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
-		"./public/": "/"
+		"./public/": "/",
+		'./node_modules/alpinejs/dist/cdn.js': './assets/js/alpine.js',
+		'./node_modules/preline/dist/preline.js': './assets/js/preline.js',
 	});
 
 	// Run Eleventy when these files change:
@@ -73,6 +75,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter("renderRichTextAsHtml", (value) =>
     	documentToHtmlString(value)
   	);
+
+	// Short codes
+	eleventyConfig.addShortcode("version", function () {
+		return String(Date.now());
+	});
 
 	// -----------------------------------------------------------------
 	// Tailwind asynchronous filter

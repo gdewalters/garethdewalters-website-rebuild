@@ -9,15 +9,15 @@ eleventyComputed:
     title: "{{ article.fields.headline }}"
 ---
     <header class="max-w-4xl mx-auto text-center">
-         <h1 class="font-lato">{{ article.fields.headline }}</h1>
+         <h1 class="font-sans">{{ article.fields.headline }}</h1>
          <p class="">Published on: <time>{{ article.fields.datePublished }}</time></p>
     </header>
     
-    <section id="articleStandfirst" class="max-w-2xl mx-auto mb-10 md:prose-xl lg:prose-2xl font-merriweather">
+    <section id="articleStandfirst" class="max-w-2xl mx-auto mb-10 md:prose-xl lg:prose-2xl font-serif">
         {{ article.fields.standfirst | safe }}
     </section>
     
-    <section id="articleBody" class="max-w-2xl mx-auto font-merriweather prose-h2:font-lato prose-h3:font-lato">
+    <section id="articleBody" class="max-w-2xl mx-auto prose-h2:font-sans prose-h3:font-sans font-serif">
 
         {{ article.fields.body | renderRichTextAsHtml | safe }}
 
@@ -25,7 +25,7 @@ eleventyComputed:
 
     </section>
 
-    <footer class="max-w-2xl mx-auto md:prose-xl lg:prose-2xl font-merriweather">
+    <footer class="max-w-2xl mx-auto md:prose-xl lg:prose-2xl">
 
         <section id="articleTags" class="flex flex-row">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 basis-1/6">
